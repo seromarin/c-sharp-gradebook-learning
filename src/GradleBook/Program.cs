@@ -8,16 +8,16 @@ namespace GradleBook
         static void Main(string[] args)
         {
 
-            List<double> grades = new List<double>() { 123.34, 234.234, 235235.235, 234.234 };
+            Book book = new Book();
 
-            grades.Add(1.34);
+            book.
 
-            foreach (double grade in grades)
-            {
-                Console.WriteLine($"The result is equal to {grade:N2}");
-            }
+            book.AddGrade(89.3);
+            book.AddGrade(345.3);
+            book.AddGrade(34.3);
+            book.AddGrade(56.3);
 
-
+            book.AverangeGrade();
 
         }
     }
