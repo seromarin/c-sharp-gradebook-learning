@@ -16,6 +16,9 @@ namespace GradleBook
 
             book.AverangeGrade();
             Console.WriteLine($"Using {book.name}");
+            Console.WriteLine($"Averange {book.AverangeGrade()}");
+            Console.WriteLine($"High {book.highGrade()}");
+            Console.WriteLine($"High {book.lowGrade()}");
 
         }
     }

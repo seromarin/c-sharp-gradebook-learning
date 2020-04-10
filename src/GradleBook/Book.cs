@@ -18,5 +18,9 @@ namespace GradleBook
         internal void AddGrade(double grade) => grades.Add(grade);
 
         internal double AverangeGrade() => grades.Aggregate((acc, x) => acc + x);
+
+        internal double highGrade() => grades.Aggregate((acc, x) => x > acc ? x : acc);
+
+        internal object lowGrade() => grades.Aggregate((acc, x) => x < acc ? x : acc);
     }
 }
