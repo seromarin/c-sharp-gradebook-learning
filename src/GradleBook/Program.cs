@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace GradleBook
 {
@@ -8,9 +7,7 @@ namespace GradleBook
         static void Main(string[] args)
         {
 
-            Book book = new Book();
-
-            book.
+            Book book = new Book("Seromarin Grade Book");
 
             book.AddGrade(89.3);
             book.AddGrade(345.3);
@@ -18,6 +15,7 @@ namespace GradleBook
             book.AddGrade(56.3);
 
             book.AverangeGrade();
+            Console.WriteLine($"Using {book.name}");
 
         }
     }

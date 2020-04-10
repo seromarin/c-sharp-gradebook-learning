@@ -7,8 +7,11 @@ namespace GradleBook
     class Book
     {
         List<double> grades;
-        public Book()
+        public string name { get; }
+
+        public Book(string name)
         {
+            this.name = name;
             grades = new List<double> {};
         }
 
