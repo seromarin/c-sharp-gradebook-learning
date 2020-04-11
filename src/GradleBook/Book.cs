@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace GradleBook
 {
-    class Book
+    public class Book
     {
         List<double> grades;
         public string name { get; }
@@ -15,12 +15,12 @@ namespace GradleBook
             grades = new List<double> {};
         }
 
-        internal void AddGrade(double grade) => grades.Add(grade);
+        public void AddGrade(double grade) => grades.Add(grade);
 
-        internal double AverangeGrade() => grades.Aggregate((acc, x) => acc + x);
+        public double AverangeGrade() => Math.Round(grades.Aggregate((acc, x) => acc + x) / grades.Count, 2);
 
-        internal double highGrade() => grades.Aggregate((acc, x) => x > acc ? x : acc);
+        public double highGrade() => grades.Aggregate((acc, x) => x > acc ? x : acc);
 
-        internal object lowGrade() => grades.Aggregate((acc, x) => x < acc ? x : acc);
+        public object lowGrade() => grades.Aggregate((acc, x) => x < acc ? x : acc);
     }
 }
