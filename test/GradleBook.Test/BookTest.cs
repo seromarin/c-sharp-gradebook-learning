@@ -31,7 +31,7 @@ namespace GradleBook.Test
             book.AddGrade(95.05);
 
             // Act
-            var highgrade = book.highGrade();
+            var highgrade = book.HighGrade();
 
             // Assert
             Assert.Equal(95.05, highgrade);
@@ -47,10 +47,31 @@ namespace GradleBook.Test
             book.AddGrade(95.05);
 
             // Act
-            var lowGrade = book.lowGrade();
+            var lowGrade = book.LowGrade();
 
             // Assert
             Assert.Equal(47.35, lowGrade);
+        }
+
+        [Fact]
+        public void BookTestStadistics()
+        {
+            // Arrange
+            var book = new Book("");
+            book.AddGrade(89.65);
+            book.AddGrade(47.35);
+            book.AddGrade(95.05);
+
+            // Act
+            var stadistics = book.GetStadistics();
+
+            // Asserts
+            // Assert Averange
+            Assert.Equal(77.35, stadistics.Averange);
+            // Assert High
+            Assert.Equal(95.05, stadistics.High);
+            // Assert Low
+            Assert.Equal(47.35, stadistics.Low);
         }
     }
 }

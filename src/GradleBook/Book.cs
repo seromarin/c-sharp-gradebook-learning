@@ -19,8 +19,28 @@ namespace GradleBook
 
         public double AverangeGrade() => Math.Round(grades.Aggregate((acc, x) => acc + x) / grades.Count, 2);
 
-        public double highGrade() => grades.Aggregate((acc, x) => x > acc ? x : acc);
+        public double HighGrade() => grades.Aggregate((acc, x) => x > acc ? x : acc);
 
-        public object lowGrade() => grades.Aggregate((acc, x) => x < acc ? x : acc);
+        public double LowGrade() => grades.Aggregate((acc, x) => x < acc ? x : acc);
+
+        public Stadistics GetStadistics() {
+            Stadistics stadistics = new Stadistics();
+
+            stadistics.Averange = 0.0;
+            stadistics.High = Double.MinValue;
+            stadistics.Low = Double.MaxValue;
+
+            foreach (double grade in grades)
+            {   
+                stadistics.High = Math.Max(grade, stadistics.High);
+                stadistics.Low = Math.Min(grade, stadistics.Low);
+                stadistics.Averange += grade;
+            }
+
+            stadistics.Averange = Math.Round(stadistics.Averange / grades.Count, 2);
+
+            return stadistics;
+
+        }
     }
 }

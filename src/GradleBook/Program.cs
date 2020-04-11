@@ -14,11 +14,10 @@ namespace GradleBook
             book.AddGrade(34.3);
             book.AddGrade(56.3);
 
-            book.AverangeGrade();
             Console.WriteLine($"Using {book.name}");
             Console.WriteLine($"Averange {book.AverangeGrade()}");
-            Console.WriteLine($"High {book.highGrade()}");
-            Console.WriteLine($"High {book.lowGrade()}");
+            Console.WriteLine($"High {book.HighGrade()}");
+            Console.WriteLine($"High {book.LowGrade()}");
 
         }
     }
